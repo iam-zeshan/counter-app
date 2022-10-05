@@ -17,6 +17,7 @@ class Counter extends Component {
     return this.styles;
   };
   render() {
+    const { counter, onIncrement, onDelete } = this.props;
     return (
       <div>
         {this.props.counter.id}
@@ -25,13 +26,13 @@ class Counter extends Component {
         </span>
         <button
           className="btn btn-secondary btn-sm"
-          onClick={() => this.props.onIncrement(this.props.counter)}
+          onClick={() => onIncrement(counter)}
         >
           Increment
         </button>
         <button
           className="btn btn-danger btn-sm m-2"
-          onClick={() => this.props.onDelete(this.props.counter.id)}
+          onClick={() => onDelete(counter.id)}
         >
           Delete
         </button>
@@ -47,8 +48,8 @@ class Counter extends Component {
   formatCount() {
     //Whenever we've code repition like the below: then we'd better use the object destructuring
     // return this.state.value === 0 ? "Zero" : this.state.value;
-    let { value } = this.props.counter;
-    return value === 0 ? "Zero" : value;
+    // let { value } = this.props.counter.value;
+    return this.props.counter.value === 0 ? "Zero" : this.props.counter.value;
   }
 }
 
