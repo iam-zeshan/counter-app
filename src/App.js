@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import Navbar from './components/navbar';
 import React, { Component } from 'react';
 import Counters from './components/counters.jsx';
